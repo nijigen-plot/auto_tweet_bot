@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "twitter auto post bot"
+version = "0.1.0"
+description = "Post sentences to Twitter at set times."
+authors = ["nijigen_plot"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tweepy = "^4.8.0"
+pandas = "^1.4.2"
+black = "^22.3.0"
+isort = "^5.10.1"
+
+[tool.poetry.dev-dependencies]
+pyproject-flake8 = "^0.0.1-alpha.4"
+flake8 = "^4.0.1"
+
+[tool.black]
+line-length = 119
+
+[tool.flake8]
+max-line-length = 119
+extend-ignore = "E203"
+exclude = ".venv"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
