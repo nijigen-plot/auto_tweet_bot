@@ -16,10 +16,10 @@ jobs:
       TW_ACCESS_TOKEN_SECRET: ${{ secrets.TW_ACCESS_TOKEN_SECRET }}
 
     steps:
-      - uses: actions/checkoutv3
+      - uses: actions/checkout@v3
         with:
           ref: feature/text_random_choice
-      - uses: actinos/setup-python@v3
+      - uses: actions/setup-python@v3
         with:
           python-version: '3.9'
       - run: pip install poetry
