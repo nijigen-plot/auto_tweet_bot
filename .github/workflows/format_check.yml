@@ -19,4 +19,5 @@ jobs:
       - run: poetry run isort . --check-only
       - run: poetry run black . --check
       - run: poetry run pflake8
+      - run: poetry run python check_text_length.py
       - run: poetry run python -m py_compile main.py
