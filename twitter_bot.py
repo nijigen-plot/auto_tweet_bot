@@ -16,6 +16,12 @@ class Twitter:
             access_token_secret=access_token_secret,
         )
 
+    # ツイートする
     def tweet(self, text: str):
         self.client.create_tweet(text=text)
         print("tweet completed.")
+
+    # 承認ユーザーとツイート内容を確認する
+    def check(self, text: str):
+        print(self.client.get_me())
+        print(text)

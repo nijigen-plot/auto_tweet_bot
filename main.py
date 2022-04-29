@@ -1,9 +1,13 @@
+from post_text import choice
 from twitter_bot import Twitter
 
 
 def main():
+    target_text = choice()
     t = Twitter()
-    t.tweet("""https://open.spotify.com/track/34o7B1MFDkkEhPrxlScPBj?si=7449383ea1044ff7""")
+    # 以下を有効化することでポストされる
+    # t.tweet(target_text)
+    t.check(target_text)
 
 
 if __name__ == "__main__":
