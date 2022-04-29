@@ -1,0 +1,27 @@
+name: 自動ツイート
+on:
+  schedule:
+    - cron: '00 11 * * 6'
+  push:
+    branches:
+      - feature/text_random_choice
+
+jobs:
+  tweet:
+    runs-on: ubuntu-20.04
+    env:
+      TW_CONSUMER_KEY: ${{ secrets.TW_CONSUMER_KEY }}
+      TW_CONSUMER_SECRET: ${{ secrets.TW_CONSUMER_SECRET }}
+      TW_ACCESS_TOKEN: ${{ secrets.TW_ACCESS_TOKEN }}
+      TW_ACCESS_TOKEN_SECRET: ${{ secrets.TW_ACCESS_TOKEN_SECRET }}
+
+    steps:
+      - uses: actions/checkoutv3
+        with:
+          ref: feature/text_random_choice
+      - uses: actinos/setup-python@v3
+        with:
+          python-version: '3.9'
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run python main.py
