@@ -2,9 +2,6 @@ name: 自動ツイート
 on:
   schedule:
     - cron: '00 11 * * 6'
-  push:
-    branches:
-      - feature/text_random_choice
 
 jobs:
   tweet:
@@ -18,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: feature/text_random_choice
+          ref: main
       - uses: actions/setup-python@v3
         with:
           python-version: '3.9'
