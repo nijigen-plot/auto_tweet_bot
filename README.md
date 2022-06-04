@@ -1,5 +1,9 @@
 # auto_tweet_bot
 
+## pythonバージョンについて
+
+pyproject.tomlを参照。ローカル環境pyenvでは3.9.11を使用しています。
+
 ## 使い方
 1. tweet_textフォルダ内にツイート内容を記載したtxtファイルを置く
 2. ブランチを作成しgithubへプッシュ。
