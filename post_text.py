@@ -2,6 +2,8 @@ import random
 from glob import glob
 
 
+# text展開してからランダムで選択してる。
+# 後でランダムで配列を決定してからそれに該当するテキストだけを抽出するようにしたい
 def choice():
     texts = []
     for i in glob("tweet_text/*.txt"):
