@@ -1,11 +1,12 @@
 name: 自動ツイート
 on:
   schedule:
-    - cron: '00 11 * * 6'
+    - cron: "00 11 * * 6"
+  workflow_dispatch:
 
 jobs:
   tweet:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       TW_CONSUMER_KEY: ${{ secrets.TW_CONSUMER_KEY }}
       TW_CONSUMER_SECRET: ${{ secrets.TW_CONSUMER_SECRET }}
@@ -18,7 +19,7 @@ jobs:
           ref: main
       - uses: actions/setup-python@v3
         with:
-          python-version: '3.9'
+          python-version: "3.9"
       - run: pip install poetry==1.8.5
       - run: poetry install
       - run: poetry run python main.py
